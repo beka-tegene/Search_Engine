@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Paper,
@@ -74,6 +74,11 @@ const DUMMY_DATA = [
   },
 ];
 const Hero = () => {
+  const [searchEngine, setSearchEngine] = useState();
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log(searchEngine);
+  };
   return (
     <Box
       sx={{
@@ -109,6 +114,7 @@ const Hero = () => {
             alignItems: "center",
             width: 500,
           }}
+          onSubmit={submitHandler}
         >
           <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
             <Search />
@@ -118,6 +124,7 @@ const Hero = () => {
             sx={{ ml: 1, flex: 1 }}
             placeholder="Search or type web address"
             inputProps={{ "aria-label": "Search or type web address" }}
+            onChange={(e) => setSearchEngine(e.target.value)}
           />
           <IconButton sx={{ p: "10px" }} aria-label="Mic">
             <Mic />
