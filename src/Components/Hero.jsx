@@ -91,9 +91,11 @@ const Hero = () => {
       )
       .then((response) => {
         console.log(response.data);
+        console.log("hello");
       })
       .catch((error) => {
         console.log(error);
+        console.log("world");
       });
   };
   return (
