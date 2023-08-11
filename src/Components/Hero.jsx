@@ -99,7 +99,7 @@ const Hero = () => {
       });
     // const options = {
     //   method: "GET",
-    //   url: "https://google-web-search1.p.rapidapi.com/",
+    //   url: "https://google-web-search1.p.rapidapi.com/api/v1/search",
     //   params: {
     //     query: searchEngine,
     //     limit: "20",
