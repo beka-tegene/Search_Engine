@@ -23,6 +23,7 @@ import image4 from "../Image/F2sPIuQbIAAS1id.jpg";
 import image5 from "../Image/F2xT4kMWcAAnLdi.jpg";
 import image6 from "../Image/F3HLh50WMAALTQ9.jpg";
 import image7 from "../Image/F3LYRURaEAY6jdz.jpg";
+import axios from "axios";
 const DUMMY_DATA = [
   {
     img: image,
@@ -81,9 +82,19 @@ const DUMMY_DATA = [
 ];
 const Hero = () => {
   const [searchEngine, setSearchEngine] = useState();
+  const API_KEY = "AIzaSyDkvgnByVrw3JpbMiZMOEGSAHZCZ_KYz7U";
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(searchEngine);
+    axios
+      .get(
+        `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=017576662512468239146https://www.googleapis.com/customsearch/v1?key=INSERT_YOUR_API_KEY&cx=017576662512468239146:omuauf_lfve&q=${searchEngine.trim()}`
+      )
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <Box
