@@ -83,11 +83,11 @@ const DUMMY_DATA = [
 const Hero = () => {
   const [searchEngine, setSearchEngine] = useState();
   const API_KEY = "AIzaSyDkvgnByVrw3JpbMiZMOEGSAHZCZ_KYz7U";
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     axios
       .get(
-        `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=017576662512468239146https://www.googleapis.com/customsearch/v1?key=INSERT_YOUR_API_KEY&cx=017576662512468239146:omuauf_lfve&q=${searchEngine.trim()}`
+        `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=017576662512468239146:omuauf_lfve&q=${encodeURIComponent(searchEngine.trim())}`
       )
       .then((response) => {
         console.log(response.data);
@@ -97,6 +97,26 @@ const Hero = () => {
         console.log(error);
         console.log("world");
       });
+    // const options = {
+    //   method: "GET",
+    //   url: "https://google-web-search1.p.rapidapi.com/",
+    //   params: {
+    //     query: searchEngine,
+    //     limit: "20",
+    //     related_keywords: "true",
+    //   },
+    //   headers: {
+    //     "X-RapidAPI-Key": "9bcddc489emsh732069e72822897p10553ejsnf6a9e3f3529c",
+    //     "X-RapidAPI-Host": "google-web-search1.p.rapidapi.com",
+    //   },
+    // };
+
+    // try {
+    //   const response = await axios.request(options);
+    //   console.log(response.data);
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
   return (
     <Box
