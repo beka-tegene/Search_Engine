@@ -15,14 +15,14 @@ import {
 } from "@mui/material";
 import { Search, CenterFocusWeak, Mic } from "@mui/icons-material";
 import logo from "../Image/logos.png";
-import image from "../Image/Frame 880.png";
-import image1 from "../Image/Frame 881.png";
-import image2 from "../Image/Frame 882.png";
-import image3 from "../Image/Frame 883.png";
-import image4 from "../Image/Frame 884.png";
-import image5 from "../Image/Frame 885.png";
-import image6 from "../Image/Frame 886.png";
-import image7 from "../Image/Frame 887.png";
+import image from "../Image/F1jwRsgWYAA_4cX.jpg";
+import image1 from "../Image/F1z56bcXwAMFd2G.jpg";
+import image2 from "../Image/F2NnY8OXAAAODtR.jpg";
+import image3 from "../Image/F2NoGjXXMAAdNzP.jpg";
+import image4 from "../Image/F2sPIuQbIAAS1id.jpg";
+import image5 from "../Image/F2xT4kMWcAAnLdi.jpg";
+import image6 from "../Image/F3HLh50WMAALTQ9.jpg";
+import image7 from "../Image/F3LYRURaEAY6jdz.jpg";
 const DUMMY_DATA = [
   {
     img: image,
@@ -63,6 +63,12 @@ const DUMMY_DATA = [
   {
     img: image6,
     title: "NEWS 6",
+    description:
+      "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+  },
+  {
+    img: image7,
+    title: "NEWS 7",
     description:
       "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
   },
