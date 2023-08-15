@@ -23,7 +23,8 @@ import image4 from "../Image/F2sPIuQbIAAS1id.jpg";
 import image5 from "../Image/F2xT4kMWcAAnLdi.jpg";
 import image6 from "../Image/F3HLh50WMAALTQ9.jpg";
 import image7 from "../Image/F3LYRURaEAY6jdz.jpg";
-import axios from "axios";
+import bg from "../Image/bg.png";
+import { useNavigate } from "react-router-dom";
 const DUMMY_DATA = [
   {
     img: image,
@@ -82,21 +83,10 @@ const DUMMY_DATA = [
 ];
 const Hero = () => {
   const [searchEngine, setSearchEngine] = useState();
-  const API_KEY = "AIzaSyDkvgnByVrw3JpbMiZMOEGSAHZCZ_KYz7U";
+  const navigate = useNavigate();
   const submitHandler = async (e) => {
     e.preventDefault();
-    axios
-      .get(
-        `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=017576662512468239146:omuauf_lfve&q=${encodeURIComponent(searchEngine.trim())}`
-      )
-      .then((response) => {
-        console.log(response.data);
-        console.log("hello");
-      })
-      .catch((error) => {
-        console.log(error);
-        console.log("world");
-      });
+    navigate(`/search?q=${encodeURIComponent(searchEngine.trim())}`);
     // const options = {
     //   method: "GET",
     //   url: "https://google-web-search1.p.rapidapi.com/api/v1/search",
@@ -128,6 +118,10 @@ const Hero = () => {
         height: "100vh",
         gap: 4,
         padding: "1rem 3%",
+        backgroundImage: `url(${bg})`,
+        backgroundPosition: "top",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <Stack
@@ -152,6 +146,7 @@ const Hero = () => {
             display: "flex",
             alignItems: "center",
             width: 500,
+            borderRadius: 10,
           }}
           onSubmit={submitHandler}
         >
